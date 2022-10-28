@@ -42,8 +42,8 @@ export default function TextForm(props) {
 
 
   return (
-    <div className="container">
-      <h1 className="my-4">{props.title}</h1>
+    <div className='container' style={{color: props.mode==='dark'?'white':'#404040'}}>
+      <h1 className="my-4">Text</h1>
       <div className="mb-3">
         <textarea
           className="form-control"
@@ -52,26 +52,27 @@ export default function TextForm(props) {
           placeholder="Start Typing..."
           value={text}
           onChange={handelOnChange}
+          style={{backgroundColor: props.mode==='dark'?'#404040':'white', color: props.mode==='dark'?'white':'#404040'}}
         />
-        <button className="btn btn-dark mx-1 my-2" onClick={handelUpClick}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={handelUpClick}>
           Uppercase
         </button>
-        <button className="btn btn-dark mx-1 my-2" onClick={handelLowClick}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={handelLowClick}>
           Lowercase
         </button>
-        <button className="btn btn-dark mx-1 my-2" onClick={capitalize}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={capitalize}>
           Capitalize
         </button>
-        <button className="btn btn-dark mx-1 my-2" onClick={handelRemoveClick}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={handelRemoveClick}>
           Remove Extra Spaces
         </button>
-        <button className="btn btn-dark mx-1 my-2" onClick={speak}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={speak}>
           Speak Text
         </button>
-        <button className="btn btn-dark mx-1 my-2" onClick={copy}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={copy}>
           Copy
         </button>
-        <button className="btn btn-dark mx-1 my-2" onClick={handelClearClick}>
+        <button className={`btn btn-${props.mode === 'dark'?'light':'dark'} mx-1 my-2`} onClick={handelClearClick}>
           Clear Text
         </button>
         <h1 className="my-3">Text Analysis</h1>
